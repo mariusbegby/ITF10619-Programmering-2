@@ -1,9 +1,9 @@
 public class Planet {
     private String name;
-    private int mass;
-    private String radius;
+    private double mass;
+    private double radius;
 
-    public Planet(String planetName, int planetMass, String planetRadius) {
+    public Planet(String planetName, double planetMass, double planetRadius) {
         name = planetName;
         mass = planetMass;
         radius = planetRadius;
@@ -13,11 +13,11 @@ public class Planet {
         return name;
     }
 
-    public int getMass() {
+    public double getMass() {
         return mass;
     }
 
-    public String getRadius() {
+    public double getRadius() {
         return radius;
     }
 
@@ -29,11 +29,11 @@ public class Planet {
         mass = newMass;
     }
 
-    public void setRadius(String newRadius) {
+    public void setRadius(double newRadius) {
         radius = newRadius;
     }
 
     public void printPlanetDescription() {
-        System.out.println("Planeten " + name + " har en radius på " + radius + " km og en masse på " + mass + " kg.");
+        System.out.println("The planet " + name + " has a radius of " + radius + " km and a mass of " + mass + " kg.");
     }
 }

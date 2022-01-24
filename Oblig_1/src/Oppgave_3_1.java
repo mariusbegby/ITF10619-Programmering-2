@@ -7,17 +7,19 @@ public class Oppgave_3_1 {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Planet name:");
+        System.out.println("Planet name (e.g. Earth):");
         String planetName = input.next();
 
-        System.out.println("Planet mass:");
-        int planetMass = input.nextInt();
+        System.out.println("Planet mass (e.g. 6371):");
+        double planetMass = input.nextDouble();
 
-        System.out.println("Planet radius:");
-        String planetRadius = input.next();
+        System.out.println("Planet radius (e.g. 5,97E24):");
+        double planetRadius = input.nextDouble();
 
         input.close();
 
-        System.out.println("name: " + planetName + ", mass: " + planetMass + ", radius: " + planetRadius);
+        Planet userPlanet = new Planet(planetName, planetMass, planetRadius);
+        userPlanet.printPlanetDescription();
+
     }
 }
