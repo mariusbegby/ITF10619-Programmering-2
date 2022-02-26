@@ -1,6 +1,7 @@
 package no.hiof.mariubeg.Oblig_3.models;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class PlanetSystem {
     private String name;
@@ -39,6 +40,17 @@ public class PlanetSystem {
             }
         }
         return smallestPlanet;
+    }
+
+    public Planet getPlanetByName(String planetName) {
+        Planet foundPlanet = null;
+        for (Planet planet : planets) {
+            if (planet.getName().equalsIgnoreCase(planetName)) {
+                foundPlanet = planet;
+            }
+        }
+
+        return foundPlanet;
     }
 
     @Override

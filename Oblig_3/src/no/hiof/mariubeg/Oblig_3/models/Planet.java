@@ -1,63 +1,39 @@
 package no.hiof.mariubeg.Oblig_3.models;
 
-public class Planet {
-    private String name;
-    private double radius;
-    private double mass;
+public class Planet extends CelestialBody {
+
+    private static final double rjup = 71_492;
+    private static final double mjup = 1.898E27;
+    private static final double rearth = 6371;
+    private static final double mearth = 5.972E24;
 
     public Planet(String name, double radius, double mass) {
-        this.name = name;
-        this.radius = radius;
-        this.mass = mass;
+        super(name, radius, mass);
     }
 
-    public double radiusInKm() {
-        return radius * 71_492;
+    public double getRadiusInKm() {
+        return super.getRadius() * rjup;
     }
 
-    public double massInKg() {
-        return mass * 1.898E27;
+    public double getMassInKg() {
+        return super.getMass() * mjup;
     }
 
     public double radiusInRearth() {
-        return radiusInKm()/6371;
+        return getRadiusInKm()/rearth;
     }
 
     public double massInMearth() {
-        return massInKg()/5.972E24;
+        return getMassInKg()/mearth;
     }
 
     public double getSurfaceGravity() {
-        return (6.67408E-11 * massInKg()) / Math.pow(radiusInKm()*1000, 2);
+        return (super.getGravityConstant() * getMassInKg()) / Math.pow(getRadiusInKm()*1000, 2);
     }
 
     @Override
     public String toString() {
-        return "The planet " + name + " has a radius of " + radius +
-                " Rjup, and a mass of " + mass + " Mjup.";
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getRadius() {
-        return radius;
-    }
-
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
-
-    public double getMass() {
-        return mass;
-    }
-
-    public void setMass(double mass) {
-        this.mass = mass;
+        return "The planet " + super.getName() + " has a radius of " + super.getRadius() +
+                " Rjup, and a mass of " + super.getMass() + " Mjup.";
     }
 }

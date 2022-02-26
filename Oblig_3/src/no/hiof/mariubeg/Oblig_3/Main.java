@@ -47,12 +47,12 @@ public class Main {
 
         // Skriver ut saturns radius og masse
         System.out.println();
-        System.out.println("Saturn radius in Km: " + saturn.radiusInKm() + "\n" +
-                "Saturn mass in kg: " + saturn.massInKg());
+        System.out.println("Saturn radius in Km: " + saturn.getRadiusInKm() + "\n" +
+                "Saturn mass in kg: " + saturn.getMassInKg());
 
         // Skriver ut solens radius og masse
-        System.out.println("Sun radius in km: " + sun.radiusInKm() +
-                "\nSun mass in kg: " + sun.massInKg());
+        System.out.println("Sun radius in km: " + sun.getRadiusInKm() +
+                "\nSun mass in kg: " + sun.getMassInKg());
 
         // Skriver ut tyngdekraften for saturn og neptune
         System.out.println();
@@ -68,5 +68,13 @@ public class Main {
         System.out.println();
         System.out.println("Mars Mearth: " + mars.massInMearth());
         System.out.println("Mars Rearth: " + mars.radiusInRearth());
+
+        // Finner planet i planetsystem basert på navn til planet
+        System.out.println();
+        System.out.println(planetSystem.getPlanetByName("earth"));
+
+        // Bruke getRadiusInKm med konstante verdier
+        System.out.println();
+        System.out.println("The earth has a radius of " + earth.getRadiusInKm() + " km.");
     }
 }
