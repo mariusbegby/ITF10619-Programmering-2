@@ -76,5 +76,20 @@ public class Main {
         // Bruke getRadiusInKm med konstante verdier
         System.out.println();
         System.out.println("The earth has a radius of " + earth.getRadiusInKm() + " km.");
+
+        System.out.println();
+        System.out.println("Earth has a distance of " + String.format("%.0f", earth.getDistanceToCelestialBody(0)) + " km to the Sun at 0 degrees.");
+        System.out.println("Earth has a distance of " + String.format("%.0f", earth.getDistanceToCelestialBody(90)) + " km to the Sun at 90 degrees.");
+        System.out.println("Earth has a distance of " + String.format("%.0f", earth.getDistanceToCelestialBody(180)) + " km to the Sun at 180 degrees.");
+        System.out.println("Earth has a distance of " + String.format("%.0f", earth.getDistanceToCelestialBody(270)) + " km to the Sun at 270 degrees.");
+        System.out.println("Earth has a distance of " + String.format("%.0f", earth.getDistanceToCelestialBody(360)) + " km to the Sun at 360 degrees.");
+
+        System.out.println();
+        System.out.println("At a distance of " + String.format("%.0f", earth.getDistanceToCelestialBody(0)) + " km, Earth has a velocity of " + String.format("%.2f", earth.orbitingVelocity(earth.getDistanceToCelestialBody(0))) + " km/s");
+        System.out.println("At a distance of " + String.format("%.0f", earth.getDistanceToCelestialBody(45)) + " km, Earth has a velocity of " + String.format("%.2f", earth.orbitingVelocity(earth.getDistanceToCelestialBody(45))) + " km/s");
+        System.out.println("At a distance of " + String.format("%.0f", earth.getDistanceToCelestialBody(90)) + " km, Earth has a velocity of " + String.format("%.2f", earth.orbitingVelocity(earth.getDistanceToCelestialBody(90))) + " km/s");
+        System.out.println("At a distance of " + String.format("%.0f", earth.getDistanceToCelestialBody(135)) + " km, Earth has a velocity of " + String.format("%.2f", earth.orbitingVelocity(earth.getDistanceToCelestialBody(135))) + " km/s");
+        System.out.println("At a distance of " + String.format("%.0f", earth.getDistanceToCelestialBody(180)) + " km, Earth has a velocity of " + String.format("%.2f", earth.orbitingVelocity(earth.getDistanceToCelestialBody(180))) + " km/s");
+
     }
 }

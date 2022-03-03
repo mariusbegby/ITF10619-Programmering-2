@@ -46,4 +46,14 @@ public abstract class NaturalSatellite extends CelestialBody {
     public void setCentralCelestialBody(CelestialBody centralCelestialBody) {
         this.centralCelestialBody = centralCelestialBody;
     }
+
+    public double getDistanceToCelestialBody(double degrees) {
+        double r = (semiMajorAxis * (1 - Math.pow(eccentricity, 2))) / (1 + (eccentricity * Math.cos(Math.toRadians(degrees))));
+        return r * super.getAu();
+    }
+
+    public double orbitingVelocity(double distance) {
+        double orbitVelocity = Math.sqrt((super.getGravityConstant() * centralCelestialBody.getMassInKg()) / (distance * 1000));
+        return orbitVelocity / 1000;
+    }
 }

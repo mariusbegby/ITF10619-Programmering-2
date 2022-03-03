@@ -5,6 +5,7 @@ public abstract class CelestialBody {
     private double radius;
     private double mass;
     private static final double gravityConstant = 6.67408E-11;
+    private static final double au = 149_597_871;
 
     public CelestialBody(String name, double radius, double mass) {
         this.name = name;
@@ -18,6 +19,10 @@ public abstract class CelestialBody {
 
     public double getGravityConstant() {
         return gravityConstant;
+    }
+
+    public double getAu() {
+        return au;
     }
 
     public void setName(String name) {
@@ -41,7 +46,7 @@ public abstract class CelestialBody {
     }
 
     public abstract String toString();
-    public abstract double getRadiusInKm();
     public abstract double getMassInKg();
+    public abstract double getRadiusInKm();
 
 }
