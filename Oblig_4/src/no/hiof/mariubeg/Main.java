@@ -29,6 +29,8 @@ public class Main {
         Planet uranus = solarSystem.getPlanet("Uranus");
         Planet neptune = solarSystem.getPlanet("Neptune");
 
+        System.out.println(earth.compareTo(mars));
+
     }
 
 }

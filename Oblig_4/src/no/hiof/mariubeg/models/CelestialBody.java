@@ -1,6 +1,6 @@
 package no.hiof.mariubeg.models;
 
-public abstract class CelestialBody {
+public abstract class CelestialBody implements Comparable<CelestialBody>{
     private String name;
     private double radius, mass;
 
@@ -10,6 +10,19 @@ public abstract class CelestialBody {
         this.name = name;
         this.radius = radius;
         this.mass = mass;
+    }
+
+    @Override
+    public int compareTo(CelestialBody celestialBody) {
+        if(mass == celestialBody.getMass()) {
+            return 0;
+        }
+        else if (mass > celestialBody.getMass()) {
+            return 1;
+        }
+        else {
+            return -1;
+        }
     }
 
     public abstract double getMassInKg();
