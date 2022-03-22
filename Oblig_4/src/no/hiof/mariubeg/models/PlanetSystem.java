@@ -17,7 +17,7 @@ public class PlanetSystem implements Comparable<PlanetSystem> {
         if(planets.size() == planetSystem.getPlanets().size()) {
             return 0;
         }
-        else if (planets.size() > planetSystem.getPlanets().size()) {
+        else if (planets.size() < planetSystem.getPlanets().size()) {
             return 1;
         }
         else {

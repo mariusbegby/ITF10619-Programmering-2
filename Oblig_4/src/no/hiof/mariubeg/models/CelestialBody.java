@@ -17,7 +17,7 @@ public abstract class CelestialBody implements Comparable<CelestialBody>{
         if(mass == celestialBody.getMass()) {
             return 0;
         }
-        else if (mass > celestialBody.getMass()) {
+        else if (mass < celestialBody.getMass()) {
             return 1;
         }
         else {
